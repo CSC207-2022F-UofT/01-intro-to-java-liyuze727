@@ -39,6 +39,7 @@ public class Basics {
          *    (Relevant reading: 1.1.3. Printing things)
          */
         System.out.println(7 + 5);
+        System.out.println("Hello World!");
 
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
@@ -57,7 +58,7 @@ public class Basics {
          *
          *    (Relevant reading: 1.2. Variables and Types)
          */
-
+        int my_variable = 100;
         /*
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
@@ -86,7 +87,9 @@ public class Basics {
          *
          *    (Relevant reading: 1.8.2. for Loops)
          */
-
+        for (int i = 10; i >= 0; i--){
+            System.out.println("Current count: " + i);
+        }
         /*
          * TODO (Task 3): Create a for-loop that loops from 10 to 0, printing
          *                the following at each iteration:
@@ -141,12 +144,12 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
-
-        // Fill in the rest of the body here
-
+        String[] result = to_split.split(" ");
+        for (String str: result){
+            ret.append(str.charAt(0));
+        }
         return ret.toString();
     }
-
     /**
      * 7. Below is a method that takes in an integer array (similar to a list
      *    of integers). The method's name is 'oddSum' and it returns an int
@@ -163,7 +166,16 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
-
+        int arr_len = arr.length;
+        if (arr_len == 0 || arr_len == 1){
+            return 0;
+        } else {
+            for (int i = 0; i < arr_len; i++){
+                if (i % 2 != 0){
+                    current_sum += arr[i];
+                }
+            }
+        }
         /* TODO (Task 5): Complete this method body using a for-loop.
          *                You can find the length of an array by using the
          *                .length attribute (e.g. arr.length)
